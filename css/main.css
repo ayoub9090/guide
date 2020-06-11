@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@font-face {
+    font-family: 'BahijTheSansArabic-Light';
+    src: url('../fonts/BahijTheSansArabic-Light.eot');
+    src: local('?'), url('../fonts/BahijTheSansArabic-Light.woff') format('woff'), url('../fonts/BahijTheSansArabic-Light.woff2') format('woff2'), url('../fonts/BahijTheSansArabic-Light.ttf') format('truetype'), url('../fonts/BahijTheSansArabic-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    font-family: 'BahijTheSansArabic-Light';
+    font-size: 16px;
+    direction: rtl;
+    text-align: right;
+}
+
+.navbar {
+    background-color: #fff;
+}
+
+.navbar-header {
+    float: right;
+}
+
+.navbar-brand {
+    height: auto;
+}
+
+.guide {
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 72px;
+    padding: 15px;
+    position: relative;
+    background-size: cover;
+    text-decoration: none!important;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(320.35deg, #0C329D 0%, #005CB9 46.22%, #1198CE 100%);
+    color: #fff !important;
+    margin-bottom: 15px;
+}
+
+.guide span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.guide:hover span {
+    color: white;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media (min-width: 768px) {
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+        float: right;
+    }
+}
+
+.ship {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    position: absolute;
+    right: -50px;
+}
+
+.ship-holder {
+    position: relative;
+    min-height: 280px;
+}
+
+.title-main {
+    font-size: 60px;
+    line-height: 79px;
+    color: rgb(26, 57, 160);
+    font-weight: bold;
+}
+
+.jumberton {
+    margin-top: 36px;
+    margin-bottom: 30px;
+}
+
+.navbar-brand img {
+    width: 300px;
+}
+
+@media(max-width:767px) {
+    .navbar-brand img {
+        width: 120px;
+    }
+    .ship, .ship-holder {
+        display: none;
+    }
+    .title-main {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .jumberton {
+        margin-top: 20px;
+    }
+    .guide {
+        font-size: 16px;
+    }
+}
