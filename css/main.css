@@ -15,10 +15,7 @@ body, html {
     font-size: 16px;
     direction: rtl;
     text-align: right;
-}
-
-.navbar {
-    background-color: #fff;
+    min-height: 100vh;
 }
 
 .navbar-header {
@@ -29,22 +26,73 @@ body, html {
     height: auto;
 }
 
-.guide {
-    background-repeat: no-repeat;
+.d-flex.content {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 72px;
-    padding: 15px;
-    position: relative;
-    background-size: cover;
-    text-decoration: none!important;
-    font-size: 21px;
-    font-weight: bold;
-    text-align: center;
-    background: linear-gradient(320.35deg, #0C329D 0%, #005CB9 46.22%, #1198CE 100%);
-    color: #fff !important;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.guide {
+    background: #E9E9EA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 3px #00000029;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
     margin-bottom: 30px;
+    text-decoration: none !important;
+    overflow: hidden;
+}
+
+.guide .text {
+    background: transparent linear-gradient(180deg, #3659C2 0%, #182A5E 100%) 0% 0% no-repeat padding-box;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px;
+    position: relative;
+}
+
+.guide .text:before {
+    content: '';
+    width: 0;
+    height: 0;
+    top: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #3659C2;
+    position: absolute;
+    right: 34px;
+}
+
+.guide .head {
+    padding: 12px 20px;
+    color: #243F8F;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.guide .head span {
+    color: #243F8F !important;
+    font-weight: bold;
+}
+
+@media(min-width:992px) {
+    .guide .head span {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+.guide .head img {
+    vertical-align: middle;
+    max-width: 100%;
+    max-height: 40px;
+}
+
+@media(min-width:768px) {
+    .guide .head img {
+        height: 40px;
+    }
 }
 
 .guide span {
@@ -53,6 +101,10 @@ body, html {
 
 .guide:hover span {
     color: white;
+}
+
+.guides-holder {
+    margin-top: -65px;
 }
 
 .mask {
@@ -69,53 +121,197 @@ body, html {
     }
 }
 
-.ship {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-    position: absolute;
-    right: -50px;
-}
-
-.ship-holder {
-    position: relative;
-    min-height: 280px;
-}
-
 .title-main {
-    font-size: 60px;
-    line-height: 79px;
-    color: rgb(26, 57, 160);
-    font-weight: bold;
+    font-size: 38px;
+    line-height: 62px;
+    color: #fff;
+    position: relative;
+    padding-right: 20px;
+}
+
+.title-main:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    background-color: #66C1FF;
+    width: 3px;
+    height: 94%;
+    top: 8px;
+}
+
+.title-main small {
+    color: #fff;
+    display: block;
+    font-size: 28px;
+}
+
+.language-switch {
+    color: #fff !important;
+    float: left;
+    margin-top: 0px;
+    text-decoration: none !important;
+}
+
+.navbar-fixed-top {
+    padding-top: 20px;
 }
 
 .jumberton {
-    margin-top: 36px;
-    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    padding-top: 140px;
+    padding-bottom: 182px;
 }
 
-.navbar-brand img {
-    width: 300px;
+.relative {
+    position: relative;
+}
+
+.screen {
+    width: 106%;
+    position: absolute;
+    top: -40px;
+    left: 0;
+}
+
+footer {
+    background-color: #1E1E1E;
+    color: #fff;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 12px;
+}
+
+footer span {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+@media(max-width:1024px) {
+    .guide .head {
+        font-size: 18px;
+    }
 }
 
 @media(max-width:767px) {
-    .navbar-brand img {
-        width: 120px;
-    }
-    .ship, .ship-holder {
-        display: none;
+    .title-main:before {
+        top: 4px;
     }
     .title-main {
         font-size: 28px;
         line-height: 36px;
     }
     .jumberton {
-        margin-top: 20px;
+        padding-top: 100px;
+        padding-bottom: 120px;
     }
     .guide {
         font-size: 16px;
+    }
+    .screen {
+        display: none;
+    }
+    .navbar-fixed-top {
+        padding-top: 0;
+    }
+    .language-switch {
+        margin-top: 20px;
+    }
+    footer {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-top: 30px;
+    }
+}
+
+.navbar-fixed-top {
+    position: absolute;
+    transition: all 0.2s;
+}
+
+.navbar-fixed-top.sticky {
+    position: fixed;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    padding-top: 0;
+}
+
+.navbar-fixed-top img, .language-switch {
+    transition: all 0.2s;
+}
+
+.navbar-fixed-top.sticky img {
+    width: 70px;
+}
+
+.navbar-fixed-top.sticky .language-switch {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/********ENGLISH CSS************/
+
+body.english {
+    text-align: left;
+    direction: ltr;
+}
+
+body.english footer {
+    direction: rtl;
+}
+
+body.english .guide .text:before {
+    right: auto;
+    left: 34px;
+}
+
+body.english .title-main:before {
+    right: auto;
+    left: 0;
+}
+
+body.english .title-main {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+body.english .screen {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    right: 0;
+    left: auto;
+}
+
+body.english .title-main {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+body.english .navbar-header {
+    float: left;
+}
+
+body.english .language-switch {
+    float: right;
+}
+
+@media (min-width: 768px) {
+    body.english .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-right: -15px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    body.english .col-sm-1, body.english .col-sm-2, body.english .col-sm-3, body.english .col-sm-4, body.english .col-sm-5, body.english .col-sm-6, body.english .col-sm-7, body.english .col-sm-8, body.english .col-sm-9, body.english .col-sm-10, body.english .col-sm-11, body.english .col-sm-12 {
+        float: left;
+    }
+}
+
+@media(max-width:1024px) and (min-width:767px) {
+    body.english .title-main {
+        font-size: 22px;
     }
 }

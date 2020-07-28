@@ -1,0 +1,17 @@
+{
+    "lang": "عربي",
+    "title": "Interactive User Manuals",
+    "subtitle": "for Fasah Platform",
+    "trader": {
+        "title": "Trader",
+        "text": "Learn how to create authorizations, Customs and Statistical declaration, clearance permits, exemptions, and many other services related to the merchant through Fasah platform."
+    },
+    "broker": {
+        "title": "Custom Broker",
+        "text": "Learn how to create customs declarations, such as export, transit, import, statistics, and all services related to customs broker through Fasah platform."
+    },
+    "fasahPay": {
+        "title": "Fasah Pay",
+        "text": "Learn the right way to use the electronic payment service (Fasah Pay) through Fasah Platform."
+    }
+}
