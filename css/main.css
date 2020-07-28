@@ -52,6 +52,10 @@ body, html {
     position: relative;
 }
 
+.guide .text p {
+    margin-bottom: 0;
+}
+
 .guide .text:before {
     content: '';
     width: 0;
